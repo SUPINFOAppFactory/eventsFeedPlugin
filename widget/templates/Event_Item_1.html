@@ -1,0 +1,38 @@
+<div class="holder padding-zero">
+  <div class="events-plugin" ng-if="WidgetEvent.event">
+    <div class="plugin-banner clearfix border-bottom-grey" >
+      <img ng-if="WidgetEvent.data.design.eventTitleImage" load-image="239x1"
+           crop-width="342" crop-height="150" crop-type="crop"
+           data-final-src="{{WidgetEvent.data.design.eventTitleImage}}">
+    </div>
+    <div class="padded event-intro clearfix padding-bottom-five">
+      <div class="col-xs-3 event-date text-center pull-left">
+        <h3 class="margin-zero text-primary text-overlay">
+          {{WidgetEvent.event.startDate |
+          getMonthFromTimestamp}}</h3>
+
+        <h1 class="margin-zero text-primary text-overlay">
+          {{WidgetEvent.event.startDate |
+          getDateFromTimestamp}}</h1>
+      </div>
+      <div class="col-xs-9 text-left pull-left text-overlay">
+        <p class="margin-bottom-zero ellipsis text-overlay">{{WidgetEvent.event
+          .SUMMARY}}</p>
+        <p class="margin-zero text-overlay"
+           ng-if="WidgetEvent.event.endDate && !WidgetEvent.event.isAllDay">{{WidgetEvent.event.startDate |
+          date:'h:mm a'}} - {{WidgetEvent.event.endDate | date : 'h:mm a'}} {{WidgetEvent.event.endDate | getTimeZone}}</p>
+        <p class="margin-zero text-overlay"
+           ng-if="WidgetEvent.event.endDate && WidgetEvent.event.isAllDay">
+          {{WidgetEvent.event.startDate |
+          date:'mediumDate'}} - {{WidgetEvent.event.endDate | date : 'mediumDate'}}</p>
+        <a class="text-primary text-overlay" href="javascript:void(0)" ng-click="WidgetEvent.addEventsToCalendar(WidgetEvent.event)">Add to Calendar</a>
+      </div>
+    </div>
+
+    <div
+        class="text-left padded padding-bottom-zero clearfix text-overlay">
+      <p ng-if="WidgetEvent.event.SUMMARY.length>35">{{WidgetEvent.event.SUMMARY}}</p>
+      <p class="break-word">{{WidgetEvent.event.DESCRIPTION}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="holder padding-zero">
+  <div class="events-plugin event-layout3">
+    <div class="plugin-banner clearfix border-bottom-grey">
+      <div class="plugin-slider text-center">
+      <div class="plugin-slide">
+
+      <img ng-if="!WidgetEvent.data.design.eventTitleImage"
+           src='../../../styles/media/holder-4x3.png'>
+      <img ng-if="WidgetEvent.data.design.eventTitleImage" load-image="4x3" crop-width="342" crop-height="273" crop-type="crop"
+           data-final-src="{{WidgetEvent.data.design.eventTitleImage}}">
+      </div>
+      </div>
+      <div class="info-circle small bg-white">
+        <div class="info-circle-inner">
+          <h3 class="margin-zero text-primary text-overlay">
+            {{WidgetEvent.event.startDate |
+            getMonthFromTimestamp}}</h3>
+
+          <h1 class="margin-zero text-primary text-overlay">
+            {{WidgetEvent.event.startDate |
+            getDateFromTimestamp}}</h1>
+        </div>
+      </div>
+      <div class="info-text">
+        <p class="margin-bottom-zero ellipsis text-overlay whiteTheme">
+          {{WidgetEvent.event.SUMMARY}}</p>
+
+        <p class="margin-bottom-zero ellipsis text-overlay whiteTheme"
+           ng-if="WidgetEvent.event.endDate && !WidgetEvent.event.isAllDay">{{WidgetEvent.event.startDate |
+          date:'h:mm a'}} - {{WidgetEvent.event.endDate | date : 'h:mm a'}}
+          {{WidgetEvent.event.endDate | getTimeZone}}</p>
+        <p class="margin-bottom-zero ellipsis text-overlay whiteTheme"
+           ng-if="WidgetEvent.event.endDate && WidgetEvent.event.isAllDay">{{WidgetEvent.event.startDate |
+          date:'mediumDate'}} - {{WidgetEvent.event.endDate | date : 'mediumDate'}}</p>
+      </div>
+    </div>
+    <div class="padded text-center clearfix padding-bottom-ten text-overlay">
+      <a class="text-primary" href="javascript:void(0)" ng-click="WidgetEvent.addEventsToCalendar(WidgetEvent.event)">Add to Calendar</a>
+    </div>
+    <hr class="margin-top-zero margin-bottom-zero margin-left-fifteen margin-right-fifteen">
+    <div class="text-left padded padding-bottom-zeroclearfix text-overlay">
+      <p ng-if="WidgetEvent.event.SUMMARY.length>42">{{WidgetEvent.event.SUMMARY}}</p>
+      <p class="break-word">{{WidgetEvent.event.DESCRIPTION}}</p>
+    </div>
+  </div>
+</div>

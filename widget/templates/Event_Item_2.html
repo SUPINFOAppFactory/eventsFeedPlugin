@@ -1,0 +1,46 @@
+<div class="holder padding-zero">
+  <div class="events-plugin">
+    <div class="plugin-banner clearfix border-bottom-grey" >
+      <img ng-if="!WidgetEvent.data.design.eventTitleImage"
+           src='../../../styles/media/holder-4x3.png'>
+      <img ng-if="WidgetEvent.data.design.eventTitleImage" load-image="4x3"
+           crop-width="342" crop-height="273" crop-type="crop"
+           data-final-src="{{WidgetEvent.data.design.eventTitleImage}}">
+
+      <div class="info-circle bg-white text-overlay">
+        <div class="info-circle-inner">
+          <h3 class="margin-zero text-primary text-overlay">
+            {{WidgetEvent.event.startDate |
+            getMonthFromTimestamp}}</h3>
+
+          <h1 class="margin-zero text-primary text-overlay">
+            {{WidgetEvent.event.startDate |
+            getDateFromTimestamp}}</h1>
+        </div>
+      </div>
+      <div
+          class="info-bar titleBarBackgroundTheme padding-top-five padding-bottom-five text-overlay">
+        <div class="col-xs-12 text-left pull-left text-overlay">
+          <p class="margin-bottom-zero ellipsis titleBarTextAndIcons text-overlay">
+            {{WidgetEvent.event.SUMMARY}}</p>
+
+          <p class="margin-bottom-zero ellipsis text-overlay"
+             ng-if="WidgetEvent.event.endDate && !WidgetEvent.event.isAllDay">{{WidgetEvent.event.startDate |
+            date:'h:mm a'}} - {{WidgetEvent.event.endDate | date : 'h:mm a'}}
+            {{WidgetEvent.event.endDate | getTimeZone}}</p>
+          <p class="margin-bottom-zero ellipsis text-overlay"
+             ng-if="WidgetEvent.event.endDate && WidgetEvent.event.isAllDay">{{WidgetEvent.event.startDate |
+            date:'mediumDate'}} - {{WidgetEvent.event.endDate | date : 'mediumDate'}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="padded text-center clearfix text-overlay">
+      <a class="text-primary" href="javascript:void(0)" ng-click="WidgetEvent.addEventsToCalendar(WidgetEvent.event)">Add to Calendar</a>
+    </div>
+    <div class="text-left padded padding-bottom-zero clearfix text-overlay">
+      <p ng-if="WidgetEvent.event.SUMMARY.length>42">{{WidgetEvent.event.SUMMARY}}</p>
+      <hr class="small" ng-if="WidgetEvent.event.DESCRIPTION">
+      <p class="break-word">{{WidgetEvent.event.DESCRIPTION}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "author":"SUPINFO AppFactory"
+  ,"pluginName":"Events Feed"
+  ,"pluginDescription":"Easily sync your Google Calendar, Mac Mail Calendar, or any other calendar with an iCal feed to keep your users and students up to date with your events."
+  ,"supportEmail":"supinfoappfactory@supinfo.com"
+  , "supportSite":"http://support.appdocumentation.com/knowledge-base/events-feed-plugin/"
+  ,"pluginIcon":"icon.png"
+  ,"offlineModeEnabled": true
+  ,"licenseKey": "a4sd6-as654asd6as545a65s4d6a-65asd564a"
+  ,"control":{
+    "content":{
+      "enabled":true
+    }
+    , "design":{
+      "enabled":true
+    }
+    , "settings":{
+      "enabled":false
+    }
+  }
+  ,"widget":{
+
+  },
+  "features": [{"name" : "Calendar"}],
+  "languages": ["en"]
+}

@@ -1,7 +1,7 @@
 {
   "name": "eventsFeedPlugin",
   "version": "1.0.0",
-  "description": "This SUPINFO AppFactory plugin allows user to add their calender events in feed mode:",
+  "description": "Plugin that allows user to add their calender events in feed mode:",
   "main": "index.js",
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install",

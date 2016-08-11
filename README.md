@@ -4,7 +4,7 @@
 Easily sync your Google Calendar, Mac Mail Calendar, or any other calendar with an iCal feed to keep your users and students up to date with your events.
 
 ### Plugin overview
-http://support.appdocumentation.com/knowledge-base/events-feed-plugin/
+http://support.appdocumentation.com/knowledge-base/events-feed-plugin
 
 ### Pre-requisite : Before running the plugin, start the node proxy server. Steps:
 - cd server
